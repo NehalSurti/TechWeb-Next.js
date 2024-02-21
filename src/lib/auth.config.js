@@ -6,20 +6,26 @@ export const authConfig = {
   callbacks: {
     // FOR MORE DETAIL ABOUT CALLBACK FUNCTIONS CHECK https://next-auth.js.org/configuration/callbacks
     async jwt({ token, user }) {
+      console.log("user :", user);
       if (user) {
         token.id = user.id;
-        token.isAdmin = user.isAdmin;
+        token.isAdmin = user._doc.isAdmin;
       }
+      console.log("token :", token);
       return token;
     },
     async session({ session, token }) {
+      console.log("start session :",session);
+      console.log("session token :",token);
       if (token) {
         session.user.id = token.id;
         session.user.isAdmin = token.isAdmin;
       }
+      console.log("end session :",session);
       return session;
     },
-    authorized({ auth, request }) {
+    authorized({ auth, request}) {
+      console.log("auth : ", auth);
       const user = auth?.user;
       const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
       const isOnBlogPage = request.nextUrl?.pathname.startsWith("/blog");

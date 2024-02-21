@@ -15,11 +15,11 @@
 }
 
 .title {
-  font-size: 54px;
+  font-size: 48px;
 }
 
 .desc {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -42,10 +42,9 @@
 .imgContainer {
   flex: 1;
   position: relative;
-}
-
-.img {
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

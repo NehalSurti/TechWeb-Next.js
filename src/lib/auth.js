@@ -43,6 +43,7 @@ export const {
       async authorize(credentials) {
         try {
           const user = await login(credentials);
+          console.log(user);
           return user;
         } catch (err) {
           return null;
