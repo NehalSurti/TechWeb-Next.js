@@ -8,7 +8,7 @@ export const authConfig = {
       console.log("user :", user);
       if (user) {
         token.id = user.id;
-        token.isAdmin = user._doc.isAdmin;
+        token.isAdmin = user && user._doc && user._doc.isAdmin || false;
       }
       console.log("token :", token);
       return token;

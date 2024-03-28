@@ -23,7 +23,7 @@ const Home = () => {
           src="/hero.gif"
           alt=""
           width={510}
-          height={500}
+          height={450}
           className={styles.heroImg}
         />
       </div>

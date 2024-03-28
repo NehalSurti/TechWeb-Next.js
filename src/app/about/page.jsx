@@ -40,7 +40,7 @@ const AboutPage = () => {
           src="/about.png"
           alt="About Image"
           width={450}
-          height={450}
+          height={400}
           className={styles.img}
         />
       </div>
